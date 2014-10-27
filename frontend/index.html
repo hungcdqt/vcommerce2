@@ -1,64 +1,394 @@
-
 <!DOCTYPE html>
-<html>
+<html ng-app="ui.bootstrap.demo">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Flex Cell</title>
-  <link rel="stylesheet" href="https://material.angularjs.org/docs.css">
+	<title>Link every thing</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="vendors/css/bootstrap.css" rel="stylesheet" />
+	<link href="vendors/css/bootstrap-theme.css" rel="stylesheet" />
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	
+
+	<style type="text/css">
+
+	</style>
+
+	<script src="vendors/angular.js"></script>
+	<script src="vendors/ui-bootstrap.js"></script>
+	<script src="vendors/ui-bootstrap-tpls.js"></script>
+	<script src="controllers/ui-bootstrap-demo.js"></script>
+
+	<script type="text/javascript">
+	</script>
 </head>
-<body class="layout-demo demo-padding">
+<body >
 
-  <div layout="vertical" layout-sm="horizontal" layout-padding>
+	<section id="header">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href=""><i class="glyphicon glyphicon-home"></i></a>			
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">My links</a></li>
+						<li><a href="#">Reading List</a></li>
+						<li><a href="#">From Friends</a></li>
+						<li><a href="#">Top Links</a></li>
+						<li><a href="#">All Links</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">All</a></li>
+								<li><a href="#">Articles</a></li>
+								<li><a href="#">Videos</a></li>
+								<li><a href="#">Images</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-left navbar-input-group" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search posts & friend">
+						</div>
+						<button type="submit" class="btn btn-default">
+							Search
+						</button>
+					</form>
 
-    <div flex>
-      <div>Uno [flex]</div>
-    </div>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span>Hung Cao<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="">Account</a></li>
+								<li class="divider"></li>
+								<li><a href="">Logout</a></li>
+							</ul>
+						</li>
+					</ul>		
 
-    <div flex>
-      <div>Dos [flex]</div>
-    </div>
+				</div>
 
-    <div flex>
-      <div>Tres [flex]</div>
-    </div>
+			</div>
+		</nav>
+	</section>		
+	<section id="main" class="clearfix">
+		<div class="container" id="jumbotron">
+			<div class="jumbotron row">
+				<div class="col-md-9">
+					<h1>My first Bootstrap website!</h1>
+					<p>This page will grow as we add more and more components from Bootstrap...</p>
+				</div>
+				<div  class="col-md-3" ng-controller="CarouselDemoCtrl">
+				  <div style="height: auto;">
+				    <carousel interval="myInterval">
+				      <slide ng-repeat="slide in slides" active="slide.active">
+				        <img ng-src="{{slide.image}}" style="margin:auto;">
+				        <div class="carousel-caption">
+				          <h4>Slide {{$index}}</h4>
+				          <p>{{slide.text}}</p>
+				        </div>
+				      </slide>
+				    </carousel>
+				  </div>
+				</div>
+				
+			</div>
+		</div>
 
-    <div flex>
-      <div>Cuatro [flex]</div>
-    </div>
+		<div class="clearfix visible-lg"></div>
 
-  </div>
 
-  <div layout="vertical" layout-md="horizontal" layout-padding>
+		<div id="container">
+			<div class="view-controls-list" id="viewcontrols">
+				<a class="gridview active"><i class="fa fa-th fa-2x"></i></a>
+				<a class="listview"><i class="fa fa-list fa-2x"></i></a>
+			</div>
+			<ul class="grid">
+				<li class="thumbnail col-xs-4">
+					<div class="col-xs-offset-2 col-xs-10">
+						<img src="images/items/barbie_8.jpg" height="250px" width="250px"/>
+						<section class="list-left">
+							<span class="title">PRODUCT NAME</span>
+							<p>Product description goes here. Aliquam tincidunt diam varius ultricies auctor. Vivamus faucibus risus tempus, adipiscing justo</p>
+							<div class="icon-group-btn">											
+								<a title="Add to Cart" href="javascript:void(0);" class="btn-cart" onclick="">	
+									<span class="icon-cart"></span>
+									<span class="icon-cart-text">
+										Add To Cart						
+									</span>
+								</a>
+								<a title="Add to wishlist" href="#" class="btn-wishlist">
+									<span class="icon-wishlist"></span>
+									<span class="icon-wishlist-text">
+										Add To Wishlist						
+									</span>
+								</a>
+								<a title="Add to Compare" href="#" class="btn-compare">
+									<span class="icon-compare"></span>
+									<span class="compare-text">
+										Add To Compare						
+									</span>
+								</a>
+							</div>		
+						</section>
+						<section class="list-right">
+							<span class="price">$50</span>
+							<span class="detail"><a class="button">Details</a></span>
+						</section>
+					</div>
+				</li>
+				<li class="thumbnail col-xs-4">
+					<div class="col-xs-offset-2 col-xs-10">
+					<img src="images/items/barbie_4.jpg" height="250px" width="250px"/>
+					<section class="list-left">
+						<span class="title">PRODUCT NAME</span>
+						<p>Product description goes here. Aliquam tincidunt diam varius ultricies auctor. Vivamus faucibus risus tempus, adipiscing justo</p>
+						<div class="icon-group-btn">											
+							<a title="Add to Cart" href="javascript:void(0);" class="btn-cart" onclick="">	
+								<span class="icon-cart"></span>
+								<span class="icon-cart-text">
+									Add To Cart						
+								</span>
+							</a>
+							<a title="Add to wishlist" href="#" class="btn-wishlist">
+								<span class="icon-wishlist"></span>
+								<span class="icon-wishlist-text">
+									Add To Wishlist						
+								</span>
+							</a>
+							<a title="Add to Compare" href="#" class="btn-compare">
+								<span class="icon-compare"></span>
+								<span class="compare-text">
+									Add To Compare						
+								</span>
+							</a>
+						</div>		
+					</section>
+					<section class="list-right">
+						<span class="price">$50</span>
+						<span class="detail"><a class="button">Details</a></span>
+					</section>
+					</div>
+				</li>
+				<li class="thumbnail col-xs-4">
+					<div class="col-xs-offset-2 col-xs-10">
+					<img src="images/items/barbie_3.jpg" height="250px" width="250px"/>
+					<section class="list-left">
+						<span class="title">PRODUCT NAME</span>
+						<p>Product description goes here. Aliquam tincidunt diam varius ultricies auctor. Vivamus faucibus risus tempus, adipiscing justo</p>
+						<div class="icon-group-btn">											
+							<a title="Add to Cart" href="javascript:void(0);" class="btn-cart" onclick="">	
+								<span class="icon-cart"></span>
+								<span class="icon-cart-text">
+									Add To Cart						
+								</span>
+							</a>
+							<a title="Add to wishlist" href="#" class="btn-wishlist">
+								<span class="icon-wishlist"></span>
+								<span class="icon-wishlist-text">
+									Add To Wishlist						
+								</span>
+							</a>
+							<a title="Add to Compare" href="#" class="btn-compare">
+								<span class="icon-compare"></span>
+								<span class="compare-text">
+									Add To Compare						
+								</span>
+							</a>
+						</div>		
+					</section>
+					<section class="list-right">
+						<span class="price">$50</span>
+						<span class="detail"><a class="button">Details</a></span>
+					</section>
+					</div>
+				</li>
 
-    <div flex>
-      <div>Uno [flex]</div>
-    </div>
+				<li class="thumbnail col-xs-4">
+					<div class="col-xs-offset-2 col-xs-10">
+					<img src="images/items/barbie_1.jpg" height="250px" width="250px"/>
+					<section class="list-left">
+						<span class="title">PRODUCT NAME</span>
+						<p>Product description goes here. Aliquam tincidunt diam varius ultricies auctor. Vivamus faucibus risus tempus, adipiscing justo</p>
+						<div class="icon-group-btn">											
+							<a title="Add to Cart" href="javascript:void(0);" class="btn-cart" onclick="">	
+								<span class="icon-cart"></span>
+								<span class="icon-cart-text">
+									Add To Cart						
+								</span>
+							</a>
+							<a title="Add to wishlist" href="#" class="btn-wishlist">
+								<span class="icon-wishlist"></span>
+								<span class="icon-wishlist-text">
+									Add To Wishlist						
+								</span>
+							</a>
+							<a title="Add to Compare" href="#" class="btn-compare">
+								<span class="icon-compare"></span>
+								<span class="compare-text">
+									Add To Compare						
+								</span>
+							</a>
+						</div>		
+					</section>
+					<section class="list-right">
+						<span class="price">$50</span>
+						<span class="detail"><a class="button">Details</a></span>
+					</section>
+					</div>
+				</li>
 
-    <div flex>
-      <div>Dos [flex]</div>
-    </div>
+				<li class="thumbnail col-xs-4">
+					<div class="col-xs-offset-2 col-xs-10">
+					<img src="images/items/barbie_5.jpg" height="250px" width="250px"/>
+					<section class="list-left">
+						<span class="title">PRODUCT NAME</span>
+						<p>Product description goes here. Aliquam tincidunt diam varius ultricies auctor. Vivamus faucibus risus tempus, adipiscing justo</p>
+						<div class="icon-group-btn">											
+							<a title="Add to Cart" href="javascript:void(0);" class="btn-cart" onclick="">	
+								<span class="icon-cart"></span>
+								<span class="icon-cart-text">
+									Add To Cart						
+								</span>
+							</a>
+							<a title="Add to wishlist" href="#" class="btn-wishlist">
+								<span class="icon-wishlist"></span>
+								<span class="icon-wishlist-text">
+									Add To Wishlist						
+								</span>
+							</a>
+							<a title="Add to Compare" href="#" class="btn-compare">
+								<span class="icon-compare"></span>
+								<span class="compare-text">
+									Add To Compare						
+								</span>
+							</a>
+						</div>		
+					</section>
+					<section class="list-right">
+						<span class="price">$50</span>
+						<span class="detail"><a class="button">Details</a></span>
+					</section>
+					</div>
+				</li>
 
-    <div flex>
-      <div>Tres [flex]</div>
-    </div>
+				<li class="thumbnail col-xs-4">
+					<div class="col-xs-offset-2 col-xs-10">
+					<img src="images/items/barbie_6.jpg" height="250px" width="250px"/>
+					<section class="list-left">
+						<span class="title">PRODUCT NAME</span>
+						<p>Product description goes here. Aliquam tincidunt diam varius ultricies auctor. Vivamus faucibus risus tempus, adipiscing justo</p>
+						<div class="icon-group-btn">											
+							<a title="Add to Cart" href="javascript:void(0);" class="btn-cart" onclick="">	
+								<span class="icon-cart"></span>
+								<span class="icon-cart-text">
+									Add To Cart						
+								</span>
+							</a>
+							<a title="Add to wishlist" href="#" class="btn-wishlist">
+								<span class="icon-wishlist"></span>
+								<span class="icon-wishlist-text">
+									Add To Wishlist						
+								</span>
+							</a>
+							<a title="Add to Compare" href="#" class="btn-compare">
+								<span class="icon-compare"></span>
+								<span class="compare-text">
+									Add To Compare						
+								</span>
+							</a>
+						</div>		
+					</section>
+					<section class="list-right">
+						<span class="price">$50</span>
+						<span class="detail"><a class="button">Details</a></span>
+					</section>
+					</div>
+				</li>       
+				<li class="thumbnail col-xs-4">
+					<div class="col-xs-offset-2 col-xs-10">
+					<img src="images/items/barbie_7.jpg" height="250px" width="250px"/>
+					<section class="list-left">
+						<span class="title">PRODUCT NAME</span>
+						<p>Product description goes here. Aliquam tincidunt diam varius ultricies auctor. Vivamus faucibus risus tempus, adipiscing justo</p>
+						<div class="icon-group-btn">											
+							<a title="Add to Cart" href="javascript:void(0);" class="btn-cart" onclick="">	
+								<span class="icon-cart"></span>
+								<span class="icon-cart-text">
+									Add To Cart						
+								</span>
+							</a>
+							<a title="Add to wishlist" href="#" class="btn-wishlist">
+								<span class="icon-wishlist"></span>
+								<span class="icon-wishlist-text">
+									Add To Wishlist						
+								</span>
+							</a>
+							<a title="Add to Compare" href="#" class="btn-compare">
+								<span class="icon-compare"></span>
+								<span class="compare-text">
+									Add To Compare						
+								</span>
+							</a>
+						</div>		
+					</section>
+					<section class="list-right">
+						<span class="price">$50</span>
+						<span class="detail"><a class="button">Details</a></span>
+					</section>
+					</div>
+				</li>
 
-    <div flex>
-      <div>Cuatro [flex]</div>
-    </div flex>
+				<li class="thumbnail col-xs-4">
+					<div class="col-xs-offset-2 col-xs-10">
+					<img src="images/items/barbie_2.jpg" height="250px" width="250px"/>
+					<section class="list-left">
+						<span class="title">PRODUCT NAME</span>
+						<p>Product description goes here. Aliquam tincidunt diam varius ultricies auctor. Vivamus faucibus risus tempus, adipiscing justo</p>
+						<div class="icon-group-btn">											
+							<a title="Add to Cart" href="javascript:void(0);" class="btn-cart" onclick="">	
+								<span class="icon-cart"></span>
+								<span class="icon-cart-text">
+									Add To Cart						
+								</span>
+							</a>
+							<a title="Add to wishlist" href="#" class="btn-wishlist">
+								<span class="icon-wishlist"></span>
+								<span class="icon-wishlist-text">
+									Add To Wishlist						
+								</span>
+							</a>
+							<a title="Add to Compare" href="#" class="btn-compare">
+								<span class="icon-compare"></span>
+								<span class="compare-text">
+									Add To Compare						
+								</span>
+							</a>
+						</div>		
+					</section>
+					<section class="list-right">
+						<span class="price">$50</span>
+						<span class="detail"><a class="button">Details</a></span>
+					</section>
+					</div>
+				</li>		
+			</ul>
+		</div>	
 
-  </div>
+		<div class="push"></div>
+		<div class="footer clearfix" id="footer">
+			<p>copyright (c) @2008</p>
+		</div>		
+	</section>
 
-  <div layout="vertical" layout-lg="horizontal" layout-padding>
-
-    <div flex>
-      <div>Uno [flex]</div>
-    </div flex>
-
-    <div flex>
-      <div>Dos [flex]</div>
-    </div>
-
-  </div>
 
 </body>
 </html>

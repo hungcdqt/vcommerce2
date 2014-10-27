@@ -1,3 +1,7 @@
-var connect = require('connect');
+var connect = require('connect'),
+    serveStatic = require('serve-static');
 
-connect.createServer(connect.static("frontend")).listen(5000);
+var app = connect();
+
+app.use(serveStatic("frontend"));
+app.listen(5000);

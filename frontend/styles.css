@@ -1,0 +1,289 @@
+<style type="text/css">
+body {
+	background-color: #f3f3f3;
+}
+
+#main {
+	position: absolute;
+	top: 50px;
+	width: 100%;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.col-offset-2 {
+	/*border: 4px solid #FF0000 !important;*/
+	border: none;
+}
+
+.thumbnail{
+	border:none;
+	background-color: white;
+}
+
+/*search button*/
+.navbar-input-group {
+  font-size: 0px; /*removes whitespace between button and input*/
+}
+.navbar-input-group input {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.navbar-input-group .btn {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left: 0px;
+}
+
+
+#footer, .push {
+	clear: both;
+	height: 155px;
+}
+#footer {
+	background-color: black;
+	color: white;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+.container {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+nav .navbar-brand {
+
+}
+#container {
+	font-family: cursive,'Overlock' !important;
+	/*background-image: -ms-linear-gradient(bottom, #0FE0E0 0%, #EDEFED 100%);
+	background-image: -moz-linear-gradient(bottom, #0FE0E0 0%, #EDEFED 100%);
+	background-image: -o-linear-gradient(bottom, #0FE0E0 0%, #EDEFED 100%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0FE0E0), color-stop(1, #EDEFED));
+	background-image: -webkit-linear-gradient(bottom, #0FE0E0 0%, #EDEFED 100%);
+	background-image: linear-gradient(to top, #0FE0E0 0%, #EDEFED 100%);*/
+}
+#container ul { list-style: none;padding:0px;}
+#container .buttons { margin-bottom: 20px; }
+
+/* LIST VIEW */
+#container .list{
+	width: 100%;
+/*margin-right: 15%;
+margin-left: 15%;*/
+}
+#container .list li {
+	font-family: cursive,'Overlock' !important;
+	color: black;
+	/*background: #F7F7F7;*/
+	background-color: white;
+	border-bottom: 1px dotted #CCC;
+	margin-bottom: 50px;
+	/*padding-right: 20px;*/
+	height: 250px;
+}
+#container .list li img{
+	float: left;
+	margin-right: 10px;
+	padding-bottom: 0;
+	border-bottom: 2px solid transparent;
+}
+#container ul.list li.alt{ background:gray; }
+#container .list li p{
+	overflow:hidden;
+	word-wrap:break-word;
+	width:250px;
+}
+#container .list li .title{
+	overflow:hidden;
+	word-wrap:break-word;
+	text-transform: uppercase;
+	font-size:24px;
+}
+#container .list li .list-left{
+	/*width:300px;*/
+	position:absolute;
+	padding-left:260px;
+}
+#container .list li .list-right{
+	/*width:150px;*/
+	float:right;
+}
+#container .list li .price{
+	float:right;
+	font-size:56px;
+	display: block; 
+	margin-right: 10px; 
+	text-align: right;
+	width:100%;
+	color:#4FAFC2;
+}
+#container .list li .detail{
+	float:right;
+	display:block;
+}
+
+/* GRID VIEW */
+#container .grid li { 
+	padding: 10px;
+	box-sizing:border-sizing;
+}
+
+/*#container .grid li img{text-align:center;width:250px; margin: 7px;}
+*/
+#container .grid li p{display:none;}
+#container .grid li .list-left{text-align:left;font-size:24px;}
+#container .grid li .icon-group-btn{font-size:14px;}
+#container .grid li .list-right{display:block;width:100px;}
+#container .grid li .list-right .price{font-size:24px;display:block;color:#4FAFC2;}
+#container .grid{
+	margin-left: auto;
+}
+
+/* SWITCH CONTROLS */
+.view-controls-list{
+	width: 100%;
+	text-align: right;
+
+}
+.view-controls-grid{
+	width: 100%;
+	text-align: right;
+}
+#viewcontrols a{
+	padding:10px;
+	color:black;
+	cursor:pointer;
+}
+#viewcontrols a:hover{
+	color:palevioletred;
+}
+#viewcontrols .active{
+	color:palevioletred;
+}
+
+/* CART WISHLIST ICON BUTTONS*/
+#container .icon-group-btn a{
+	margin: 10px 0; 
+	display: inline-block;
+	float: left; width: 40px; margin-right: 5px;	
+	text-decoration: none;
+	transition:all 0.4s ease-in-out 0s;
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	-moz-transition: all 0.4s ease-in-out 0s;
+	-o-transition: all 0.4s ease-in-out 0s;
+	-ms-transition: all 0.4s ease-in-out 0s;
+}
+#container .icon-group-btn a.btn-compare{ margin-right: 0;}
+#container .icon-group-btn a span{ float: left; line-height: 32px; text-decoration: none;}
+#container .icon-group-btn .icon-cart,.icon-group-btn .icon-wishlist,.icon-group-btn .icon-compare ,.icon-group-btn .icon-share { 
+	width: 40px; 
+	height: 32px;
+	
+}
+#container .icon-group-btn .icon-cart{
+	background: url('images/icon-a-w-c.png') #777777 no-repeat  8px 8px;
+}
+#container .icon-group-btn .icon-wishlist{
+	background: url('images/icon-a-w-c.png') #777777 no-repeat 8px -66px;
+}
+
+#container .icon-group-btn .icon-compare{
+	background: url(images/icon-a-w-c.png) #777777 no-repeat 7px center;
+}
+#container .icon-group-btn .icon-cart-text{
+	text-indent: -40px; width: 0; height: 32px;
+	font-size:100%; overflow: hidden;
+	color: #fff; background:#4FAFC2;
+	transition:all 0.4s ease-in-out 0s;
+	-o-transition:all 0.4s ease-in-out 0s;
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	-moz-transition: all 0.4s ease-in-out 0s;
+	-ms-transition: all 0.4s ease-in-out 0s;
+}
+#container .icon-group-btn .icon-wishlist-text{
+	text-indent: -40px; width: 0; height: 32px;
+	color: #fff; font-size:100%;
+	overflow: hidden; background:#4FAFC2;
+	transition:all 0.4s ease-in-out 0s;
+	-o-transition:all 0.4s ease-in-out 0s;
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	-moz-transition: all 0.4s ease-in-out 0s;
+	-ms-transition: all 0.4s ease-in-out 0s;
+}
+#container .icon-group-btn .compare-text{
+	text-indent: -40px; width: 0; height: 32px;
+	color: #fff; background:#4FAFC2; font-size:100%;
+	overflow: hidden;
+	transition:all 0.4s ease-in-out 0s;
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	-moz-transition: all 0.4s ease-in-out 0s;
+	-o-transition: all 0.4s ease-in-out 0s;
+	-ms-transition: all 0.4s ease-in-out 0s;
+}
+#container .icon-group-btn a:hover .icon-cart{
+	background: url(images/icon-a-w-c.png) #4FAFC2 no-repeat  8px 8px;
+}
+#container .icon-group-btn a:hover .icon-cart-text{	
+	width: 90px;		
+	text-indent: 0;
+}
+#container .icon-group-btn a:hover{ width: 130px;}
+#container .icon-group-btn a.btn-wishlist:hover{ width: 151px;}
+#container .icon-group-btn a.btn-compare:hover{ width: 160px; }
+#container .icon-group-btn a:hover .icon-wishlist-text{	
+	width: 111px;		
+	text-indent: 0;
+}
+#container .icon-group-btn a:hover .compare-text{	
+	width: 120px;		
+	text-indent: 0;
+}
+#container .icon-group-btn a:hover .icon-wishlist{
+	background: url(images/icon-a-w-c.png) #4FAFC2 no-repeat 8px -66px;
+}
+#container .icon-group-btn a:hover .icon-compare{
+	background: url(images/icon-a-w-c.png) #4FAFC2 no-repeat 7px center;
+}
+
+/* MISCELLANEOUS */
+#container.button {
+	background-color: white;
+	background-image: -webkit-linear-gradient(top, white, white);
+	background-image: -moz-linear-gradient(top,white,white);
+	border:#4FAFC2 solid 2px;
+	display: inline-block;
+	font-size: 18px;
+	font-family: 'Meiryo UI';
+	color: #4FAFC2;
+	text-decoration: none !important;
+	padding: 5px 20px;
+	line-height: inherit;
+	overflow: hidden;
+	position: relative;
+	border-radius: 2px;
+	margin-top: 13px;
+	margin-bottom: 10px;
+}
+#container.button:hover {
+	opacity: 0.9;
+	background:#4FAFC2;
+	color:white;
+}	
+
+#container.button.red{
+	background-color:palevioletred;
+	background-image: -webkit-linear-gradient(top, palevioletred, palevioletred);
+	background-image: -moz-linear-gradient(top,palevioletred,palevioletred);
+	color:white;
+	box-shadow:0 0 5px palevioletred inset, 0 1px 1px palevioletred;
+	border:0px;
+}
+#container.button.red:hover{
+	opacity: 0.9;
+}
+</style>
